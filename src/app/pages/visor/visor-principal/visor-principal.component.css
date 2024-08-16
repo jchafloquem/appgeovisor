@@ -1,0 +1,9 @@
+.custom-panel-start {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+.content.content--float {
+    display: none !important;
+}

@@ -1,0 +1,84 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">
+        {{title}}
+    </h4>
+    <button
+        type="button" class="btn-close close pull-right"
+        aria-label="Close"
+        (click)="bsModalRef.hide()"
+    ></button>
+</div>
+
+<div class="modal-body">
+
+    <ng-container *ngIf="layerName=='DGIHR - Estudios obras'">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <canvas  id="grafico-barra" ></canvas>
+                </div>
+            </div>
+        </div>
+        
+    </ng-container>
+
+    <ng-container *ngIf="layerName=='PSI - Proyectos de Riego Tecnificado'">
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">Departamento</label>
+                    <select class="form-select" (change)="changePSIDepartamento($event)">
+                        <option value>Seleccionar</option>
+                        <option value="CUSCO">CUSCO</option>
+                        <option value="LIMA">LIMA</option>
+                        <option value="PUNO">PUNO</option>
+                        <option value="AREQUIPA">AREQUIPA</option>
+                        <option value="AYACUCHO">AYACUCHO</option>
+                        <option value="HUANCAVELICA">HUANCAVELICA</option>
+                        <option value="HUÁNUCO">HUÁNUCO</option>
+                        <option value="JUNÍN">JUNÍN</option>
+                        <option value="PUNO">PUNO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">Sistema de Riego</label>
+                    <select class="form-select" (change)="changePSISistemaRiego($event)">
+                        <option value>Seleccionar</option>
+                        <option value="ASPERSIÓN">ASPERSIÓN</option>
+                        <option value="GOTEO">GOTEO</option>
+                        <option value="MULTICOMPUERTAS">MULTICOMPUERTAS</option>
+                        <option value="MICRO ASPERSIÓN">MICRO ASPERSIÓN</option>
+                        <option value="ASPERSIÓN Y GOTEO">ASPERSIÓN Y GOTEO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">CUI</label>
+                    <input type="text" class="form-control" (keyup)="keyUpPSICUI($event)">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <canvas  id="grafico-barra" ></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <canvas  id="grafico-barra-1" ></canvas>
+                </div>
+            </div>
+        </div>
+
+
+    </ng-container>
+</div>
+<div class="modal-footer">
+    <button
+        type="button" class="btn btn-secondary"
+    >Cerrar</button>
+</div>

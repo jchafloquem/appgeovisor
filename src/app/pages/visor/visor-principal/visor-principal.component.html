@@ -1,0 +1,117 @@
+<!-- <calcite-shell contentBehind=false>
+	<calcite-shell-panel slot="panel-start" position="start" display-mode="float" heightScale="l" width-scale="l" >
+		<calcite-action-bar slot="action-bar">
+			<app-home [view]=view [webmap]="webmap"></app-home>
+            <app-layer [view]=view [webmap]="webmap"></app-layer>
+			<app-legend [view]=view [webmap]="webmap"></app-legend>
+			<app-basemap [view]=view [webmap]="webmap"></app-basemap>
+			<app-filter [view]=view [webmap]="webmap"></app-filter>
+			<app-print [view]=view [webmap]="webmap"></app-print>
+			<app-sketch [view]=view [webmap]="webmap" ></app-sketch>
+			<app-compass [view]=view [webmap]="webmap" ></app-compass>
+		</calcite-action-bar>
+		<calcite-panel heading="Capas" heightScale="l" data-panel-id="layers" hidden>
+			<div id="layers-container"></div>
+		</calcite-panel>
+		<calcite-panel heading="Mapas base" heightScale="l" data-panel-id="basemaps" hidden>
+			<div id="basemaps-container"></div>
+		</calcite-panel>
+		<calcite-panel heading="Filtro" heightScale="l" widthScale="l" data-panel-id="filter" hidden>
+			<app-filter-content [view]=view [webmap]="webmap"></app-filter-content>
+		</calcite-panel>
+		<calcite-panel heading="Leyenda" heightScale="l" data-panel-id="legends" hidden>
+			<div id="legends-container"></div>
+		</calcite-panel>
+		<calcite-panel heading="Imprimir" heightScale="l" data-panel-id="prints" hidden>
+			<div id="prints-container"></div>
+		</calcite-panel>
+		<calcite-panel heading="Herramientas de dibujo" heightScale="l" data-panel-id="sketchs" hidden>
+			<div data-panel-id="sketchs" id="sketchs-container"></div>
+		</calcite-panel>
+	</calcite-shell-panel>
+</calcite-shell>
+<div id="viewDiv" #mapViewNode></div> -->
+
+<calcite-shell contentBehind="false">
+  <calcite-shell-panel
+    slot="panel-start"
+    position="start"
+    displayMode="overlay"
+    [collapsed]="isPanelCollapsed"
+  >
+    <calcite-action-bar slot="action-bar">
+      <!-- <app-home [view]=view [webmap]="webmap"></app-home> -->
+      <app-layer [view]="view" [webmap]="webmap"></app-layer>
+      <app-legend [view]="view" [webmap]="webmap"></app-legend>
+      <app-basemap [view]="view" [webmap]="webmap"></app-basemap>
+      <app-filter [view]="view" [webmap]="webmap"></app-filter>
+      <app-print [view]="view" [webmap]="webmap"></app-print>
+      <app-sketch [view]="view" [webmap]="webmap"></app-sketch>
+      <app-compass [view]="view" [webmap]="webmap"></app-compass>
+    </calcite-action-bar>
+    <calcite-panel
+      heading="Capas"
+      heightScale="l"
+      data-panel-id="layers"
+      hidden
+    >
+      <div id="layers-container"></div>
+    </calcite-panel>
+    <calcite-panel
+      heading="Mapas base"
+      heightScale="l"
+      data-panel-id="basemaps"
+      hidden
+    >
+      <div id="basemaps-container"></div>
+    </calcite-panel>
+    <calcite-panel
+      heading="Filtro"
+      heightScale="l"
+      widthScale="l"
+      data-panel-id="filter"
+      hidden
+    >
+      <app-filter-content [view]="view" [webmap]="webmap"></app-filter-content>
+    </calcite-panel>
+    <calcite-panel
+      heading="Leyenda"
+      heightScale="l"
+      data-panel-id="legends"
+      hidden
+    >
+      <div id="legends-container"></div>
+    </calcite-panel>
+    <calcite-panel
+      heading="Imprimir"
+      heightScale="l"
+      data-panel-id="prints"
+      hidden
+    >
+      <div id="prints-container"></div>
+    </calcite-panel>
+    <calcite-panel
+      heading="Herramientas de dibujo"
+      heightScale="l"
+      data-panel-id="sketchs"
+      hidden
+    >
+      <div data-panel-id="sketchs" id="sketchs-container"></div>
+    </calcite-panel>
+  </calcite-shell-panel>
+  <calcite-panel>
+    <div style="display: flex; align-items: center">
+      <img
+        src="assets/images/midagri.png"
+        alt="Imagen"
+        style="width: 350px; height: 60px; margin-right: 10px"
+      />
+      <h3 style="margin: 0">
+        Ministerio de Desarrollo Agrario y Riego - GeoVisor
+      </h3>
+    </div>
+    <div id="viewDiv" #mapViewNode></div>
+    <!-- <div class="esri-widget"></div> -->
+    <!-- <canvas id="chartCanvas"></canvas> -->
+  </calcite-panel>
+</calcite-shell>

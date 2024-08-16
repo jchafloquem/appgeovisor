@@ -1,0 +1,29 @@
+<!-- <div id="layout-wrapper">
+    <app-topbar (settingsButtonClicked)="onSettingsButtonClicked()" (mobileMenuButtonClicked)="onToggleMobileMenu()"></app-topbar>
+    <app-horizontaltopbar></app-horizontaltopbar>
+    <div class="main-content">
+      <div class="page-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <app-footer></app-footer>
+    <app-rightsidebar></app-rightsidebar>
+</div> -->
+<calcite-shell contentBehind="false">
+  <calcite-shell-panel slot="panel-start" display-mode="float">
+    <calcite-action-bar slot="action-bar">
+      <app-sidebar-left></app-sidebar-left>
+    </calcite-action-bar>
+  </calcite-shell-panel>
+  <calcite-shell-panel
+    slot="panel-end"
+    position="end"
+    collapsed="true"
+    expandDisabled="true"
+  >
+    <calcite-action-bar slot="action-bar">
+      <app-sidebar-right></app-sidebar-right>
+    </calcite-action-bar>
+  </calcite-shell-panel>
+</calcite-shell>
+<!-- <div id="viewDiv" #mapViewNode></div>  -->

@@ -1,0 +1,152 @@
+
+<calcite-tabs>
+    <calcite-tab-nav slot="title-group">
+        <calcite-tab-title selected>
+            Ubigeo
+        </calcite-tab-title>
+        <calcite-tab-title>Cuenca</calcite-tab-title>
+        <calcite-tab-title>Proyectos Especiales</calcite-tab-title>
+        <!-- <calcite-tab-title>Capas Geográficas</calcite-tab-title> -->
+    </calcite-tab-nav>
+    <calcite-tab selected>
+
+        <calcite-card>
+            <!-- <div slot="heading">
+                
+            </div> -->
+            <div slot>
+                <div class="row mb-2">
+                    <div class="form-group">
+                        <label>Región</label>
+                        <select class="form-control form-select" (change)="regionChange($event)">
+                            <option value>Seleccionar</option>
+                            <option *ngFor="let region of regiones" value="{{region.coddep}}">{{region.nombdep}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="form-group">
+                        <label>Provincia</label>
+                        <select class="form-control form-select" (change)="provinciaChange($event)">
+                            <option value>Seleccionar</option>
+                            <option *ngFor="let provincia of provincias" value="{{provincia.codprov}}">{{provincia.nombprov}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="form-group">
+                        <label>Distrito</label>
+                        <select class="form-control form-select" (change)="distritoChange($event)">
+                            <option value>Seleccionar</option>
+                            <option *ngFor="let distrito of distritos" value="{{distrito.coddist}}">{{distrito.nombdist}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- <calcite-label> Región
+                    <calcite-select (calciteSelectChange)="regionChange($event)">
+                        <calcite-option value>Seleccionar</calcite-option>
+                        <calcite-option *ngFor="let region of regiones" [value]="region.coddep" [label]="region.nombdep"></calcite-option>
+                    </calcite-select>
+                </calcite-label>
+                <calcite-label> Provincia
+                    <calcite-select (calciteSelectChange)="provinciaChange($event)">
+                        <calcite-option value>Seleccionar</calcite-option>
+                        <calcite-option *ngFor="let provincia of provincias" [value]="provincia.codprov" [label]="provincia.nombprov"></calcite-option>
+                    </calcite-select>
+                </calcite-label>
+                <calcite-label> Distrito
+                    <calcite-select (calciteSelectChange)="distritoChange($event)">
+                        <calcite-option value>Seleccionar</calcite-option>
+                        <calcite-option *ngFor="let distrito of distritos" [value]="distrito.coddist" [label]="distrito.nombdist"></calcite-option>
+                    </calcite-select>
+                </calcite-label> -->
+                
+            </div>
+            <!-- <div slot="footer-start">
+                
+            </div>
+            <div slot="footer-end">
+                <calcite-button>Filtrar</calcite-button>
+            </div> -->
+        </calcite-card>
+    </calcite-tab>
+    <calcite-tab>
+        <calcite-card>
+            <div slot>
+                <div class="row mb-2">
+                    <div class="form-group">
+                        <label>Cuenca</label>
+                        <select class="form-control form-select" (change)="cuencaChange($event)">
+                            <option value>Seleccionar</option>
+                            <option *ngFor="let cuenca of cuencas" value="{{cuenca.CODIGO}}">{{cuenca.NOMBRE}}</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <!-- <calcite-label> Cuenca
+                    <calcite-select (calciteSelectChange)="cuencaChange($event)"> 
+                        <calcite-option value>Seleccionar</calcite-option>
+                        <calcite-option *ngFor="let cuenca of cuencas" [value]="cuenca.CODIGO" [label]="cuenca.NOMBRE"></calcite-option>
+                    </calcite-select>
+                </calcite-label> -->
+            </div>
+            <!-- <div slot="footer-start">
+                
+            </div>
+            <div slot="footer-end">
+                <calcite-button>Filtrar</calcite-button>
+            </div> -->
+        </calcite-card>
+    </calcite-tab>
+    <calcite-tab>
+        <calcite-card>
+            <div slot>
+                <div class="row mb-2">
+                    <div class="form-group">
+                        <label>Proyecto especial</label>
+                        <select class="form-control form-select" (change)="proyectoEspecialChange($event)">
+                            <option value>Seleccionar</option>
+                            <option *ngFor="let proyectoEspecial of proyectoEspeciales" value="{{proyectoEspecial.OBJECTID}}">{{proyectoEspecial.SIGLA}}</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- <calcite-label> Proyecto especial
+                    <calcite-select (calciteSelectChange)="proyectoEspecialChange($event)">
+                        <calcite-option value>Seleccionar</calcite-option>
+                        <calcite-option *ngFor="let proyectoEspecial of proyectoEspeciales" [value]="proyectoEspecial.OBJECTID" [label]="proyectoEspecial.SIGLA"></calcite-option>
+                    </calcite-select>
+                </calcite-label> -->
+            </div>
+            <!-- <div slot="footer-start">
+                
+            </div>
+            <div slot="footer-end">
+                <calcite-button>Filtrar</calcite-button>
+            </div> -->
+        </calcite-card>
+    </calcite-tab>
+    <!-- <calcite-tab>
+        <calcite-card>
+            <div slot>
+                <calcite-label> Grupo
+                    <calcite-select>
+                        <calcite-option value>Seleccionar</calcite-option>
+                    </calcite-select>
+                </calcite-label>
+                <calcite-label> SubGrupo
+                    <calcite-select>
+                        <calcite-option value>Seleccionar</calcite-option>
+                    </calcite-select>
+                </calcite-label>
+            </div>
+            <div slot="footer-start">
+                
+            </div>
+            <div slot="footer-end">
+                <calcite-button>Filtrar</calcite-button>
+            </div>
+        </calcite-card>
+    </calcite-tab> -->
+</calcite-tabs>
